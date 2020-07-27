@@ -43,10 +43,13 @@ dbgen [-v] [-O m] [-s <scale>] [-U <updates>]
 ```
 
 6. Generate TPC-H Benchmark DATA
+
 (options)
+
   -s 150 : Generate Total 150GB data 
   -S #: Step
   -C [# of partitions] : Total number of partitions
+  
   ```bash
 $ ./dbgen -s 150 -S 1 -C 4
 $ ./dbgen -s 150 -S 2 -C 4
