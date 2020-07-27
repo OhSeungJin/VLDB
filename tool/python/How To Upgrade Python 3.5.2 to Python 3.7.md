@@ -6,7 +6,7 @@ This Post is based on Ubuntu 16.04 LTS
 
 1. Install Requirements
 
-'''bash
+```bash
 $ sudo apt-get install -y build-essential
 $ sudo apt-get install -y checkinstall
 $ sudo apt-get install -y libreadline-gplv2-dev
@@ -23,33 +23,33 @@ $ sudo apt-get install -y libffi-dev
 $ sudo apt-get install -y python3-dev
 $ sudo apt-get install -y python3-setuptools
 $ sudo apt-get install -y wget
-'''
+```
 
 2. Prepare to Build
 
-'''bash
+```bash
 $ mkdir /tmp/Python37
 $ cd /tmp/Python37
-'''
+```
 
 3. Pull down Python 3.7, build, and install
 
-'''bash
+```bash
 $ wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
 $ tar xvf Python-3.7.0.tar.xz
 $ cd /tmp/Python37/Python-3.7.0
 $ ./configure
 $ sudo make altinstall
-'''
+```
 
 4. Python3 version update and Check Verion
 
-'''bash
+```bash
 $ sudo update-alternatives --install /usr/bin/python3 python /usr/local/bin/python3.7 10
 $ python3 -V
 #Python3.7.0
-'''
+```
 done.
 
-##Reference
+## Reference
 https://nogadaworks.tistory.com/203
