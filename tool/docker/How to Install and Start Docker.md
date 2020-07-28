@@ -88,7 +88,6 @@ hello-world         latest              fce289e99eb9        15 months ago       
 $ sudo docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS                               NAMES
 2eeed464cd9f        hello-world         "/hello"                 2 minutes ago       Exited (0) 2 minutes ago                                       objective_perlman
-89bb80313ac4        mysql:5.7           "docker-entrypoint.s…"   15 minutes ago      Up 15 minutes              0.0.0.0:3306->3306/tcp, 33060/tcp   vldb-mysql
 ```
 
 4. You can stop one or more running containers:
