@@ -5,7 +5,7 @@ https://github.com/Csoyee/documents/blob/master/KVStore/RocksDB_YCSB.md
 https://github.com/Csoyee/documents/blob/master/Workload/YCSB_How_To_Start.md
 https://github.com/brianfrankcooper/YCSB
 
-# Download YCSB and Compile
+# Download YCSB and Compile On Local Server
 
 # 1. Install Prerequisite
 [Ref] https://github.com/Csoyee/documents/blob/master/Workload/YCSB_How_To_Start.md
