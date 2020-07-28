@@ -128,7 +128,7 @@ $ sudo docker rm [OPTION] [container_ name]
 ## Create Docker Container
 
 ```bash
-$ sudo docker run [container_name] -[OPTIONS] [image_name] 
+$ sudo docker run --name [container_name] -[OPTIONS] [image_name] 
 ```
 다양한 옵션이 존재하므로, 자세한 내용은 
 [참 고](http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter20/28) 
