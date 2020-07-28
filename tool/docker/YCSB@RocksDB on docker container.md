@@ -75,6 +75,13 @@ $ ./bin/ycsb run rocksdb -s -P workloads/workloada -p rocksdb.dir=/tmp/ycsb-rock
 
 # YCSB@RocksDB on Docker Container
 
+## prerequesite
+```bash
+$ cd [Local YCSB dir]
+$ mkdir script
+$ ... 추가예정
+
+## Create AND Run
 1. Mount Device and Permission for Directory 
 
 ```bash
@@ -89,7 +96,7 @@ $ cp [BACKUP_dir] [data_dir]
 2. Create YCSB@RocksDB Docker Container
 
 ```bash
-$ sudo docker run
-
- 
+$ sudo docker run --name ycsb \
+ -v [data_dir]:/app/YCSB/data \
+ -v ...추가예정
     
