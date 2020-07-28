@@ -1,6 +1,7 @@
 # How To Upgrade Python 3.5.2 to Python 3.7
 
 This Post is based on Ubuntu 16.04 LTS
+**** The default Python version on 16.04 is 3.5.2 SO, DO NOT RECOMMEND CHANGE THE VERSION OF PYTHON. IT MAY CAUSE TERRIBLE SYSTEM ERROR. IT IS GOOD FOR YOU TO USE "venv python"
 
 ## Install
 
