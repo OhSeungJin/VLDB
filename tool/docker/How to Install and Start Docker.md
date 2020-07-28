@@ -4,7 +4,6 @@
 - https://github.com/meeeejin/til/blob/master/docker/mysql-with-docker-volume.md
 
 ## Install Docker Engine
-## Install Docker Engine
 
 1. Update the `apt` package index:
 
