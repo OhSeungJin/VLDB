@@ -113,6 +113,32 @@ jmimick/ycsb                                                                 0
 webdizz/ycsb                 Docker image of YCSB a framework for benchma…   0                                       [OK]
 andreifecioru/ycsb-cluster                                                   0
 catherine01/ycsb                                                             0
+.
+.
+.
+(생략)
 
 ```
+
+## Remove container
+
+```bash
+$ sudo docker rm [OPTION] [container_ name]
+```
+
+## Create Docker Container
+
+```bash
+$ sudo docker run [container_name] -[OPTIONS] [image_name] 
+```
+다양한 옵션이 존재하므로, 자세한 내용은 [여기] http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter20/28 를 
+
+
+## Execute Docker Container using /bin/bash
+
+```bash
+$ sudo docker exec -it [container_name] /bin/bash
+#Container에서 빠져나오고 싶다면 "Ctrl+D"
+```
+
 
