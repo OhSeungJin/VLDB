@@ -95,3 +95,24 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ```bash
 $ sudo docker stop [container-name]
 ```
+
+## Search Docker image in Dockerhub
+
+```bash
+$ sudo docker search -[OPTION] [Term]
+# sudo docker search ycsb
+
+
+NAME                         DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+nuodb/ycsb                   Yahoo! Cloud Serving Benchmark (YCSB) with a…   1
+matjazmav/ycsb               YCSB  https://github.com/brianfrankcooper/YC…   1                                       [OK]
+0track/ycsb                  YCSB for EPaxos and VCD                         0                                       [OK]
+dvasilas/ycsb                YCSB extended with Proteus-style query opera…   0
+risdenk/ycsb-testing         Docker testing for YCSB                         0                                       [OK]
+jmimick/ycsb                                                                 0
+webdizz/ycsb                 Docker image of YCSB a framework for benchma…   0                                       [OK]
+andreifecioru/ycsb-cluster                                                   0
+catherine01/ycsb                                                             0
+
+```
+
