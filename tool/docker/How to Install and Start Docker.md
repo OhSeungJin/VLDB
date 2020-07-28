@@ -131,7 +131,7 @@ $ sudo docker rm [OPTION] [container_ name]
 ```bash
 $ sudo docker run [container_name] -[OPTIONS] [image_name] 
 ```
-다양한 옵션이 존재하므로, 자세한 내용은 [여기] http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter20/28 를 
+다양한 옵션이 존재하므로, 자세한 내용은 [여기] http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter20/28 를  
 
 
 ## Execute Docker Container using /bin/bash
