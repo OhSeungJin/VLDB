@@ -4,6 +4,7 @@
 https://github.com/Csoyee/documents/blob/master/KVStore/RocksDB_YCSB.md
 https://github.com/Csoyee/documents/blob/master/Workload/YCSB_How_To_Start.md
 https://github.com/brianfrankcooper/YCSB
+Seo Sung Youn(SKKU VLDB Lab)
 
 # Download YCSB and Compile On Local Server
 
@@ -69,4 +70,26 @@ $ ./bin/ycsb run rocksdb -s -P workloads/workloada -p rocksdb.dir=/tmp/ycsb-rock
     - 만일 받고자하는 인자가 integer 이면,   
     `import java.lang.Integer.*;` 로 인자 임포트하고   
     `int compThread = Integer.parseInt(compThreadString)` 으로 integer 값 받아옴.
+
+
+
+# YCSB@RocksDB on Docker Container
+
+1. Mount Device and Permission for Directory 
+
+```bash
+$ sudo mount [Device_Name] [data_dir]
+$ sudo chown -R [user_name]:[user_name] [data_dir]
+$ sudo chmod 777 [data_dir]
+```
+(IF YOU AlREADY HAVE DATA_BACKUP, YOU CAN USE THAT DATA BY USING COPY&PASETE)
+```bash
+$ cp [BACKUP_dir] [data_dir]
+
+2. Create YCSB@RocksDB Docker Container
+
+```bash
+$ sudo docker run
+
+ 
     
