@@ -44,6 +44,41 @@ $ mvn clean package #매우 오래걸린다.
 ```
 # 3. Data Load and Run
 ```bash
+# Modify Log File Path
+vi YCSB/rocksdb/src/main/java/site/ycsb/db/rocksdb/RocksDBClient.java
+#아래와 같이 수정
+.
+.
+.
+(생략)
+
+ if(cfDescriptors.isEmpty()) {
+151       final Options options = new Options()
+152           .optimizeLevelStyleCompaction()
+153           .setCreateIfMissing(true)
+154           .setCreateMissingColumnFamilies(true)
+155           .setIncreaseParallelism(rocksThreads)
+156           .setMaxBackgroundCompactions(rocksThreads)
+157           .setStatsDumpPeriodSec(60)
+158           .setDbLogDir("/home/osj/workspace/log/ycsb")
+159           .setInfoLogLevel(InfoLogLevel.INFO_LEVEL);
+160       dbOptions = options;
+161       return RocksDB.open(options, rocksDbDir.toAbsolutePath().toString());
+162     } else {
+163       final DBOptions options = new DBOptions()
+164           .setCreateIfMissing(true)
+165           .setCreateMissingColumnFamilies(true)
+166           .setIncreaseParallelism(rocksThreads)
+167           .setMaxBackgroundCompactions(rocksThreads)
+168           .setStatsDumpPeriodSec(60)
+169           .setDbLogDir("/home/osj/workspace/log/ycsb")
+170           .setInfoLogLevel(InfoLogLevel.INFO_LEVEL);
+171       dbOptions = options;
+(생략)
+.
+.
+.
+
 # Load  
 $ ./bin/ycsb load rocksdb -s -P workloads/workloada -p rocksdb.dir=/tmp/ycsb-rocksdb-data
 # Run   
