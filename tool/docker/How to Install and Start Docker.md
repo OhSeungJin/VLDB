@@ -140,4 +140,10 @@ $ sudo docker exec -it [container_name] /bin/bash
 #Container에서 빠져나오고 싶다면 "Ctrl+D"
 ```
 
+## (+)Make Experiment Log File Directory
+```bash
+$ mkdir [log_directory]
+#추후 진행되는 실험에 있어서, Volume mapping할 때, 사용
+```
+
 
