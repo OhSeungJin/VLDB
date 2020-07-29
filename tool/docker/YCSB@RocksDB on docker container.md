@@ -42,7 +42,7 @@ $ git clone git clone https://github.com/brianfrankcooper/YCSB
 $ cd YCSB
 $ mvn clean package #매우 오래걸린다.
 ```
-# 3. Data Load and Run
+# 3. Data Load and Run(150GB Load, 50GB Write_Only  30m warm_up(초반 compaction 때문에)
 ```bash
 # Modify Log File Path
 vi YCSB/rocksdb/src/main/java/site/ycsb/db/rocksdb/RocksDBClient.java
@@ -78,7 +78,68 @@ vi YCSB/rocksdb/src/main/java/site/ycsb/db/rocksdb/RocksDBClient.java
 .
 .
 .
+```
+## Modify Workload for Data Size
+```bash
+$ cd [Local YCSB dir]
+$ mkdir script
+$ cd script
+$ cp -r ../workloads/ .
+$ cp workloada workloada_r
+$ cp workloada workload_w
+$ cp workloada workload_warm
+```
+아래와 같이 수정
+-workload_r
+```bash
+recordcount=150000000
+operationcount=50000000
+workload=site.ycsb.workloads.CoreWorkload
 
+readallfields=true
+
+readproportion=0.95
+updateproportion=0.05
+scanproportion=0
+insertproportion=0
+
+requestdistribution=uniform
+```
+-workload_w
+
+```bash
+recordcount=150000000
+operationcount=50000000
+workload=site.ycsb.workloads.CoreWorkload
+
+readallfields=true
+
+readproportion=0
+updateproportion=1.0
+scanproportion=0
+insertproportion=0
+
+requestdistribution=uniform
+```
+
+-workload_warm
+
+```bash
+recordcount=150000000
+operationcount=50000000
+workload=site.ycsb.workloads.CoreWorkload
+
+readallfields=true
+
+readproportion=0
+updateproportion=1.0
+scanproportion=0
+insertproportion=0
+
+requestdistribution=uniform
+```
+
+```bash
 # Load  
 $ ./bin/ycsb load rocksdb -s -P workloads/workloada -p rocksdb.dir=/tmp/ycsb-rocksdb-data
 # Run   
@@ -111,11 +172,7 @@ $ ./bin/ycsb run rocksdb -s -P workloads/workloada -p rocksdb.dir=/tmp/ycsb-rock
 
 # YCSB@RocksDB on Docker Container
 
-## prerequesite
-```bash
-$ cd [Local YCSB dir]
-$ mkdir script
-$ ... 추가예정
+
 
 ## Create AND Run
 1. Mount Device and Permission for Directory 
