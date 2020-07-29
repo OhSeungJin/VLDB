@@ -87,9 +87,9 @@ $ cd script
 $ cp -r ../workloads/ .
 $ cp workloada workloada_r
 $ cp workloada workload_w
-$ cp workloada workload_warm
 ```
 아래와 같이 수정
+
 -workload_r
 ```bash
 recordcount=150000000
@@ -122,29 +122,17 @@ insertproportion=0
 requestdistribution=uniform
 ```
 
--workload_warm
-
-```bash
-recordcount=150000000
-operationcount=50000000
-workload=site.ycsb.workloads.CoreWorkload
-
-readallfields=true
-
-readproportion=0
-updateproportion=1.0
-scanproportion=0
-insertproportion=0
-
-requestdistribution=uniform
-```
-
 ```bash
 # Load  
-$ ./bin/ycsb load rocksdb -s -P workloads/workloada -p rocksdb.dir=/tmp/ycsb-rocksdb-data
+$ ./bin/ycsb load rocksdb -s -P script/workload_r -p rocksdb.dir=[data_dir]
+# Warmup
+$ ./bin/ycsb load rocksdb -s -P script/workload_w -p maxexecutiontime=1800 -p rocksdb.dir=[data_dir]
+# Backup
+$ cp -r [data_dir]/* [backup_dir]/
 # Run   
-$ ./bin/ycsb run rocksdb -s -P workloads/workloada -p rocksdb.dir=/tmp/ycsb-rocksdb-data
+$ ./bin/ycsb run rocksdb -s -P script/workloada -p maxexecutiontime=[max_time] -p rocksdb.dir=[data_dir]
 ```
+
 ## Rocksdb configuration  
 - rocksdb.dir (required): Rocksdb 데이터 파일이 위치할 디렉토리를 configuration으로 지정해준다. 
 
@@ -184,7 +172,7 @@ $ sudo chmod 777 [data_dir]
 ```
 (IF YOU AlREADY HAVE DATA_BACKUP, YOU CAN USE THAT DATA BY USING COPY&PASETE)
 ```bash
-$ cp [BACKUP_dir] [data_dir]
+$ cp -r [backup_dir]/* [data_dir]
 
 2. Create YCSB@RocksDB Docker Container
 
