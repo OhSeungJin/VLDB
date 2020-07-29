@@ -169,15 +169,15 @@ $ ./bin/ycsb run rocksdb -s -P script/workloada -p maxexecutiontime=[max_time] -
 $ sudo mount [Device_Name] [data_dir]
 $ sudo chown -R [user_name]:[user_name] [data_dir]
 $ sudo chmod 777 [data_dir]
+$ mkdir[script_dir]/log
 ```
 (IF YOU AlREADY HAVE DATA_BACKUP, YOU CAN USE THAT DATA BY USING COPY&PASETE)
 ```bash
 $ cp -r [backup_dir]/* [data_dir]
 
-2. Create YCSB@RocksDB Docker Container
-
+2. Create YCSB@RocksDB Docker Container And Run Workload
 ```bash
-$ sudo docker run --name ycsb \
- -v [data_dir]:/app/YCSB/data \
- -v ...추가예정
+$ sudo docker run -it --rm --name ycsb -v [data_dir]:/app/YCSB/data -v [script_dir]:/app/YCSB/script csoyee/ycsb:1.0 /bin/bash -c "./bin/ycsb run rocksdb -s -P /app/YCSB/script/[workload_name] -p maxexecutiontime=[execution time] -p rocksdb.dir=/app/YCSB/data &> /app/YCSB/script/[log_name].log"
+```
+
     
