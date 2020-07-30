@@ -1,6 +1,7 @@
 # ycsb@rocksdb on container
 
-## ycsb_only_script
+## 1.test.sh (ycsb_only_script)
+
 
 ```bash
 #!bin/bash
@@ -53,3 +54,6 @@ WORKLOAD= "workloada_w" # [ workloada_r, workloada_w ]
 	
 	echo $password | sudo -S killall -15 iostat
 ```
+
+
+
