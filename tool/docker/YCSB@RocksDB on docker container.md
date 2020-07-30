@@ -188,4 +188,7 @@ $ sudo docker run -it --rm --name ycsb \ #when process is done, remove container
   -p rocksdb.dir=/app/YCSB/data &> /app/YCSB/script/[log_name].log"
 ```
 
+
+# 실험 스크립트
+##[참고](https://github.com/OhSeungJin/VLDB/blob/master/tool/test_script/ycsb@rocksdb%20on%20container.md#1testsh-ycsb_only_script)
     
