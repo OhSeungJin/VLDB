@@ -2,7 +2,7 @@
 
 
 ## Thanks to
-  - [Link](https://m.blog.naver.com/sophie_yeom/2208915296680)
+  - [Link](https://m.blog.naver.com/sophie_yeom/220891529668)
   
   
 ## 1) Oracle12c에 sysdba로 접속
