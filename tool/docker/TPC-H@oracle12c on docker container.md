@@ -680,6 +680,9 @@ sleep 60m
 su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba @/tpch/schema2.sql'
 su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba @/tpch/load.sql'
 su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba @/tpch/index.sql'
+```
+
+- Create Oracle Container
 ```bash
 $ docker run --name oracle12c \
 -d \
@@ -725,4 +728,13 @@ Import finished
 
 Database ready to use. Enjoy! ;)
 ```
+
+- data load and index
+
+```bash
+
+$ sudo docker exec -u 0 oracle12c /tpch/initialize.sh # 4시간 정도 걸림
+
+```
+
 
