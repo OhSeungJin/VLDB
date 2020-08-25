@@ -675,8 +675,6 @@ su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba
 mv /u01/app/oracle/oradata/xe/*.dbf /mount/
 su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba @/tpch/data2.sql'
 su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba @/tpch/schema1.sql'
-#schema1.sql이 오래 걸린다... 매우,,, 성급하게 하면 오류생겨버린다. du -sh mount/user*.dbf의 크기가 변하지 않을 때까지 기다린다.
-sleep 60m
 su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba @/tpch/schema2.sql'
 su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba @/tpch/load.sql'
 su oracle -c 'export PATH=$PATH:$ORACLE_HOME/bin;echo exit | sqlplus / as sysdba @/tpch/index.sql'
@@ -732,9 +730,8 @@ Database ready to use. Enjoy! ;)
 - data load and index
 
 ```bash
-
+$ sudo docker exec -it oracle12c /bin/bash -c "chown -R oracle:dba /mount; chown -R oracle:dba /data"
 $ sudo docker exec -u 0 oracle12c /tpch/initialize.sh # 4시간 정도 걸림
-
 ```
 
 
