@@ -7,7 +7,7 @@
   - [Link](https://www.notion.so/RAID-b73edf16f2af43cb9fe02d903fcf29c0)
   
 ## 실제 사용(IOD, Non-IOD Device)
-'''bash
+``` bash
 # iod Devie : /dev/nvme0n1 /dev/nvme0n2 /dev/nvme0n3 /dev/nvme0n4
 # non iod Device : /dev/nvme1n1
 
@@ -55,7 +55,7 @@ $ echo "DEVICE partitions" > /etc/mdadm.conf
 $ mdadm --detail --scan >> /etc/mdadm.conf
 
 $ exit
-'''
+```
   
   
 ## 1) mdadm 설치
