@@ -1,7 +1,7 @@
 # How to Run LinkBench@MySQL on DockerContainer
 
 ## Ref
-https://hub.docker.com/r/meeeejin/lb-mysq
+https://hub.docker.com/r/meeeejin/lb-mysql
 
 ## 1. Pull Docker Images
 ``` bash
