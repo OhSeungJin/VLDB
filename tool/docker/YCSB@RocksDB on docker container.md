@@ -171,7 +171,7 @@ $ sudo chown -R [user_name]:[user_name] [data_dir]
 $ sudo chmod 777 [data_dir]
 $ mkdir[script_dir]/log
 ```
-(IF YOU AlREADY HAVE DATA_BACKUP, YOU CAN USE THAT DATA BY USING COPY&PASETE)
+(IF YOU AlREADY HAVE DATA_BACKUP, YOU CAN USE THAT DATA BY USING COPY&PASTE)
 ```bash
 $ cp -r [backup_dir]/* [data_dir]
 ```
