@@ -86,7 +86,7 @@ $ ./bin/linkbench -c config/MyConfig.properties -l
 $ sudo docker exec -it [container_name ] /bin/bash
 ```
 
-'''bash
+```bash
 
 cd root/linkbench
 vi run.sh
