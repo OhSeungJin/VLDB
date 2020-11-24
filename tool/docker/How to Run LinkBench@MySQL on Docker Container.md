@@ -72,27 +72,27 @@ CREATE TABLE `nodetable` (
 
 mysql> quit
 
-# load
+
+#  modify configuration file
+# /root/linkbench/config 디렉토리안에
+# FBWorkload.properties  --> 데이터베이스 사이즈 조절
+# MyConfig.properties --> 벤치마킹 옵션 조절(Thread 개수, max time, request 양  etc)
+#실험에 맞게 조절해주면 된다.
+# load DATA
 $ ./bin/linkbench -c config/MyConfig.properties -l
-
 ```
-
 
 ## 5. Run
-
-1. modify run.sh
-
-```bash 
-$ sudo docker exec -it [container_name ] /bin/bash
-```
-
+2. Running Command
 ```bash
-
-cd root/linkbench
-vi run.sh
-# 아래와 같이 수정
-
-./bin/linkbench -c config/MyConfig.properties -csvstats /local_log/[log_name]_final-stats.csv -csvstream /local_log/[log_name]_streaming-stats.csv -L /local_log/[log_name]_lb.lb -r
+$ sudo docker exec -it [container_name] \
+/bin/bash -c \
+"cd /root/linkbench; \
+./bin/linkbench -c config/MyConfig.properties \
+-csvstats/local_log/[test_name]-final-stats.csv \
+-csvstream /local_log/[test_name]-streaming-stats.csv \
+-L /local_log/[test_name].lb -r"
 ```
+
 
 
