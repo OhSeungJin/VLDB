@@ -178,14 +178,16 @@ $ cp -r [backup_dir]/* [data_dir]
 
 2. Create YCSB@RocksDB Docker Container And Run Workload
 ```bash
-$ sudo docker run -it --rm --name ycsb \ #when process is done, remove container
+$ sudo docker run -idt --name ycsb \ #when process is done, remove container
   -v [data_dir]:/app/YCSB/data \
   -v [script_dir]:/app/YCSB/script \
   csoyee/ycsb:1.0 \
-/bin/bash -c "./bin/ycsb run rocksdb -s \
+
+#Run
+$ sudo docker exec -it ycsb /bin/bash -c "./bin/ycsb run rocksdb -s \
   -P /app/YCSB/script/[workload_name] \
   -p maxexecutiontime=[execution time] \
-  -p rocksdb.dir=/app/YCSB/data &> /app/YCSB/script/[log_name].log"
+  -p rocksdb.dir=/app/YCSB/data &> /app/YCSB/script/[log_name].log""
 ```
 
 
