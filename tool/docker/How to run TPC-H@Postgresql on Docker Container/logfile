@@ -1,0 +1,13 @@
+2020-09-18 08:40:08.333 UTC [710] FATAL:  lock file "postmaster.pid" already exists
+2020-09-18 08:40:08.333 UTC [710] HINT:  Is another postmaster (PID 69) running in data directory "/mount"?
+2020-09-18 09:06:32.341 UTC [1301] LOG:  starting PostgreSQL 12.4 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609, 64-bit
+2020-09-18 09:06:32.341 UTC [1301] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-09-18 09:06:32.341 UTC [1301] LOG:  could not bind IPv6 address "::1": Cannot assign requested address
+2020-09-18 09:06:32.341 UTC [1301] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2020-09-18 09:06:32.388 UTC [1301] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-09-18 09:06:32.402 UTC [1302] LOG:  database system was shut down at 2020-09-18 09:06:23 UTC
+2020-09-18 09:06:32.405 UTC [1301] LOG:  database system is ready to accept connections
+2020-09-18 09:06:34.443 UTC [1301] LOG:  received smart shutdown request
+2020-09-18 09:06:34.444 UTC [1301] LOG:  background worker "logical replication launcher" (PID 1308) exited with exit code 1
+2020-09-18 09:06:34.444 UTC [1303] LOG:  shutting down
+2020-09-18 09:06:34.450 UTC [1301] LOG:  database system is shut down
