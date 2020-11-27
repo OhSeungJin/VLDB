@@ -59,7 +59,7 @@ $ sudo docker exec -it -u pgsql [container_name] /bin/bash
 ```
 
 
-## 3. Run TPC-H
+# Run TPC-H
 ```bash
 $ vi [script_dir]/test.sh ## 각자 실험 상황에 맞게 수정
 
