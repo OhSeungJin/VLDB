@@ -8,6 +8,8 @@ http://xtr.ai/blog/2019-03-12-tpch/
 # prerequisite
 ## 0. Prepare TPC-H Data and Docker Image
 ```bash
+#본 폴더에 있는 파일 전부 다운로드해야함
+
 $ cd tpch-kit/dbgen/
 
 #1. Load Table Data
