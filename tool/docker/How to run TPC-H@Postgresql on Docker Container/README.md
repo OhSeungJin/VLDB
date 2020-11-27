@@ -6,16 +6,18 @@ http://xtr.ai/blog/2019-03-12-tpch/
   본 repo에 있는 쿼리들은 1,12,14,18번 analyze 쿼리를 
   정상작동 하게 수정하여 사용했으며, 다른 쿼리는 수정이 필요할 수 있음.
 # prerequisite
-## 0. Prepare TPC-H Data and query
+## 0. Prepare TPC-H Data and Docker Image
 ```bash
 $ cd tpch-kit/dbgen/
 
-## 1. Pull Docker Images
-``` bash
-$ sudo docker pull meeeejin/lb-mysql:latest
+#1. Load Table Data
+## -s [size]GB table data
+$ ./dbgen -s 120
+
+$ sudo docker pull oiu7934/tpch-pgsql12_4:latest
 ```
 
-## 2. Permission 
+## 1. Permission 
 ```bash
 $ sudo chown -R 999:docker [data_dir]
 $ sudo chown -R 999:docker [log_dir]
