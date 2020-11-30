@@ -24,7 +24,7 @@ Contents<br><br>
 해당 어플리케이션의 수행을 에뮬레이션할 수 있다.
 
 ## 가상화 VS 컨테이너
-<img src="https://www.redhat.com/cms/managed-files/virtualization-vs-containers.png" width="50%" style="vertical-align:middle;margin:0px 50px"> 가상화 VS 컨테이너</img>
+<img src="https://www.redhat.com/cms/managed-files/virtualization-vs-containers.png" width="50%" style="vertical-align:middle;margin:auto;"> 가상화 VS 컨테이너</img>
 ### 가상화 : 단일 하드웨어 시스템에서 여러운영체제를 동시에 수행하는 것
 ### 컨테이너 : 동일한 웅영체제 커널을 공유. 
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;시스템의 나머지 부분으로 부터 애플리케이션 프로세스 세트를 격리
