@@ -10,14 +10,14 @@ Contents<br><br>
 
 ## Ref
 [RedHat](https://www.redhat.com/ko/topics/containers/whats-a-linux-container)
-
+[Opennaru](http://www.opennaru.com/openshift/container/what-is-the-difference-between-docker-lxd-and-lxc/)
 
 # 1. LXC(Linux Container)
 <img src="https://www.redhat.com/cms/managed-files/what-is-a-container.png" width="30%"></img>
  
 LXC(Linux Container)
 ## 정의
-시스템의 나머지 부분과 격리된 프로세스 세트. 
+컨테이너는 시스템의 나머지 부분과 격리된 프로세스 세트. LXC는 툴, 템플릿, 라이브러리, 언어 바인딩 세트를 제공하는 오픈소스 컨테이너 플랫폼 
 ## 사용이유
 특정 어플리케이션의 실행에 있어서, 라이브러리, 파일, 종속성 등과 같은 환경에 의존한다면, 
 다른 환경에서는 어플리케이션 개발 및 역할 수행에 있어서, 많은 부가적인 작업이 필요하게 됨. 
@@ -33,5 +33,7 @@ LXC(Linux Container)
 가상화는 하이퍼바이저를 사용하여 하드웨어를 에뮬레이션 하고, 이를 통해 여러 운영체제를 동시에 실행--> OS의 기능이 중복되어, 경량화가 컨테이너 만큼 불가능.
 #### 컨테이너 : 동일한 웅영체제 커널을 공유.시스템의 나머지 부분으로 부터 애플리케이션 프로세스 세트를 격리
 컨테이너 환경에서는 모든 컨테이너 전체가 하나의 운영체제를 공유하므로, 어플리케이션과 서비스를 가볍게 유지가능하며, 빠른속도로 동시 실행 가능
+
+## 현 방식
 
 
