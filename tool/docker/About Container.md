@@ -61,7 +61,7 @@ Docker를 사용하면 컨테이너를 매우 가벼운 모듈식 가상 머신�
 <img src="https://www.redhat.com/cms/managed-files/traditional-linux-containers-vs-docker_0.png" width="50%" style="vertical-align:middle;margin:auto;"> </img>
 
 LXC VS Docker
-#### LXC :멀티플 프로세스를 관리할 수 있는 초기화 시스템을 사용합니다. 즉, 전체 애플리케이션을 하나로 실행할 수 있습니다.
+#### LXC :멀티플 프로세스를 관리할 수 있는 초기화 시스템을 사용합니다. 즉, 전체 애플리케이션을 하나로 실행 
 
 #### Docker : 애플리케이션이 개별 프로세스로 세분화되도록 하며 이를 수행할 수 있는 툴을 제공
 
