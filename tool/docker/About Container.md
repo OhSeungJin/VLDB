@@ -14,7 +14,8 @@ Contents<br><br>
 
 # 1. LXC(Linux Container)
 <img src="https://www.redhat.com/cms/managed-files/what-is-a-container.png" width="30%"></img>
- LXC(Linux Container)
+ 
+LXC(Linux Container)
 ## 정의
 시스템의 나머지 부분과 격리된 프로세스 세트. 
 ## 사용이유
@@ -26,6 +27,7 @@ Contents<br><br>
 
 ## 가상화 VS 컨테이너
 <img src="https://www.redhat.com/cms/managed-files/virtualization-vs-containers.png" width="50%" style="vertical-align:middle;margin:auto;"> </img>
+
 가상화 VS 컨테이너
 #### 가상화 : 단일 하드웨어 시스템에서 여러운영체제를 동시에 수행하는 것
 가상화는 하이퍼바이저를 사용하여 하드웨어를 에뮬레이션 하고, 이를 통해 여러 운영체제를 동시에 실행--> OS의 기능이 중복되어, 경량화가 컨테이너 만큼 불가능.
