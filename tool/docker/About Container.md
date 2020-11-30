@@ -15,6 +15,7 @@ Contents<br><br>
 
 [RedHat Docker](https://www.redhat.com/ko/topics/containers/what-is-docker)
 
+[NameSpace](https://galid1.tistory.com/442)
 # 1. LXC(Linux Container)
 <img src="https://www.redhat.com/cms/managed-files/what-is-a-container.png" width="30%"></img>
  
@@ -71,3 +72,32 @@ LXC VS Docker
 ## 구현 방식
 Docker 기술은 Linux kernel과 함께 Cgroups 및 Namespace와 같은 커널의 기능을 사용함. 이를 통해, 프로세스를 분리함으로써, 격리된 환경에서 실행 될 수 있도록 한다.
 
+# 3. Namespace
+
+## 정의
+하나의 시스템에서 프로세스를 격리시킬 수 있는 가상화 기술 (각 별개의 독립된 공간을 사용하는 것처럼 격리된 환경을 제공하는 경량 프로세스 가상화 기술)<br>
+한 덩어리의 데이터에 이름을 붙혀 충돌 가능성을 줄이고, 쉽게 참조할 수 있는 개념<br>
+Linux Kernel Namespace는 6개의 Linux Object에 이름을 붙임으로써, 독립된 프로세스의 환경을 구축할 수 있다.
+
+## 사용이유
+Docker를 사용하면 컨테이너를 매우 가벼운 모듈식 가상 머신처럼 다룰 수 있다. 
+컨테이너를 유연하게 사용가능하며, 어플리케이션을 클라우드에 최적화하도록 지원한다.
+
+## Type of Namespace
+### 1. PID namespace
+프로세스에 할당된 고유한 ID를 말하며, 이를 통해 프로세스를 격리할 수 있다.<br>
+namespace가 다른 프로세스끼리는 서로 접근 할 수 없다.
+### 2. Network namespace
+네트워크 디바이스, IP 주소, Port 번호, 라우팅 테이블, 필터링테이블 등의 네트워크 리소스를 namespace마다 격리시켜 <br>
+독립적으로 가질 수 있다. 이 기능을 이용하면 OS상에서 이미 사용중인 Network Port가 있더라도, 컨테이너 안에서 동일한 Port를 사용할 수 있다.
+### 3. UID namespace
+-UID : 라눅스에서 사용자를 식별하는데 사용하는 유저 아이디.<br>
+-GID : 리눅스에서 사용자그룹을 식별하는데 사용하는 사용자 그룹 아이디.<br>
+namespace별로 독립적으로 UID GID를 가지게 할 수 있다. 컨테이너 namespace가 host os 상에서 서로 다른 UID, GID를 가질 수 있다.
+### 4. Mount namespace
+-Mount : 컴퓨터에 연결된 기기나 기억장치를 OS에 인식시켜 사용가능한 상태로 만드는 것 <br>
+ host os와 컨테이너 namespace가 서로 다른 격리된 파일시스템 트리를 가질 수 있도록 한다.
+### 5. UTS namespace
+namespace별로 호스트명이나 도메인 명을 독자적으로 가질 수 있다.
+### 6. IPC namespace
+Inter Process Communication(IPC) 오브젝트를 namespace 별로 독립적으로 할당할 수 있다.
