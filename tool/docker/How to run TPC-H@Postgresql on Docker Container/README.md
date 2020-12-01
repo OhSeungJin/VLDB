@@ -31,6 +31,7 @@ $ sudo docker pull oiu7934/tpch-pgsql-12.4
 $ cd ..
 $ mkdir [data_dir] 
 $ sudo docker run -idt --name [container_name] \
+--shm-size 2G \
 -v [data_dir]:/mount \
 -v [log_dir]:/local_log \
 -v [script_dir]:/tpch \
