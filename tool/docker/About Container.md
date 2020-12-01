@@ -15,7 +15,13 @@ Contents<br><br>
 
 [RedHat Docker](https://www.redhat.com/ko/topics/containers/what-is-docker)
 
+[Docker](https://tech.ssut.me/what-even-is-a-container/)
+
 [NameSpace](https://galid1.tistory.com/442)
+
+[Cgroups_1](https://selfish-developer.com/entry/Cgroup-Control-Group)
+
+[Cgroups_2](https://sonseungha.tistory.com/535)
 # 1. LXC(Linux Container)
 <img src="https://www.redhat.com/cms/managed-files/what-is-a-container.png" width="30%"></img>
  
@@ -52,7 +58,7 @@ LXC(Linux Container)
 
 
 # 2. Docker
-
+<img src="https://tech.ssut.me/content/images/2017/08/docker.png" width="50%" style="vertical-align:middle;margin:auto;">
 ## 정의
 Docker는 Linux 컨테이너를 만들고 사용할 수 있도록 하는 컨테이너화 기술이다.
 
@@ -101,3 +107,29 @@ namespace별로 독립적으로 UID GID를 가지게 할 수 있다. 컨테이�
 namespace별로 호스트명이나 도메인 명을 독자적으로 가질 수 있다.
 ### 6. IPC namespace
 Inter Process Communication(IPC) 오브젝트를 namespace 별로 독립적으로 할당할 수 있다.
+
+# 4. Cgroup(Control Group)
+
+## 정의
+Cgroup은 CPU, Network, Memory 등 하드웨어 자원을 그룹별로 관리 할 수 있는 리눅스의 모듈이다.
+## 사용이유
+성능면에서 자원 경합을 줄이고, 예측성 높은 SLA(Service Level Agreement)를 만족할 수 있다.
+계층관리를 통하여, Tasks들에 자원을 할당할 수 있다.
+## 구현방식
+cgroup의 실체는 파일시스템이다. 직접 cgroup을 마운트하여, 수행중인 프로세스 그룹에 대하여, 하드웨어 자원을 조절할 수 있다.
+
+## Type of Cgroup
+### 1. Memory
+-memory : cgroup 작업에 사용되는 메모리(프로세스, 커널, swap)를 제한하고 리포팅을 제공하는 서브시스템
+### 2. CPU 
+-cpu :cgroups는 시스템이 busy 상태일 때 CPU 공유를 최소화 즉 사용량을 제한<br>
+-cpuacct: 프로세스 그룹 별 CPU 자원 사용에 대한 분석 통계를 생성 및 제공<br>
+-cpuset	:개별 CPU 및 메모리 노드를 cgroup에 바인딩 하기 위해 사용하는 서브시스템
+### 3. Network 
+-net_cls : 특정 cgroup 작업에서 발생하는 패킷을 식별하기 위한 태그(classid)를 지정 가능 이 태그는 방화벽 규칙으로 사용 가능 <br>
+-net_prio : cgroup 작업에서 생성되는 네트워크 트래픽의 우선순위를 선정
+### 4. Device
+-devices: cgroup의 작업 단위로 device에 대한 접근을 허용하거나 제한합니다. whitelist와 blacklist로 명시되어 있습니다.
+### 5. I/O 
+-blkio :특정 block device에 대한 접근을 제한하거나 제어하기 위한 서브시스템. block device에 대한 IO 접근 제한을 설정 가능
+
