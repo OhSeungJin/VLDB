@@ -59,6 +59,8 @@ LXC(Linux Container)
 
 # 2. Docker
 <img src="https://tech.ssut.me/content/images/2017/08/docker.png" width="50%" style="vertical-align:middle;margin:auto;">
+
+
 ## 정의
 Docker는 Linux 컨테이너를 만들고 사용할 수 있도록 하는 컨테이너화 기술이다.
 
