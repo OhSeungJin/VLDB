@@ -126,7 +126,7 @@ requestdistribution=uniform
 # Load  
 $ ./bin/ycsb load rocksdb -s -P script/workload_r -p rocksdb.dir=[data_dir]
 # Warmup
-$ ./bin/ycsb load rocksdb -s -P script/workload_w -p maxexecutiontime=1800 -p rocksdb.dir=[data_dir]
+$ ./bin/ycsb run rocksdb -s -P script/workload_w -p maxexecutiontime=1800 -p rocksdb.dir=[data_dir]
 # Backup
 $ cp -r [data_dir]/* [backup_dir]/
 # Run   
