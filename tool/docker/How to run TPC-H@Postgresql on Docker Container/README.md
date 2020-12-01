@@ -24,7 +24,7 @@ $ sudo chmod +x dbgen
 $ ./dbgen -s 120
 
 $ sudo docker pull oiu7934/tpch-pgsql-12.4
-```sudo
+```
 
 ## 1. Permission  and Create Container
 ```bash
