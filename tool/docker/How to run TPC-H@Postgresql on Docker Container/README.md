@@ -65,7 +65,7 @@ $ sudo docker exec -it -u pgsql [container_name] /bin/bash
 $ vi [script_dir]/test.sh ## 각자 실험 상황에 맞게 수정
 
   1  #!/bin/bash
-  2 
+  2 log_name=$1
   3 function msecs() {
   4     echo $((`date +%s%N` / 1000000))
   5 }
@@ -83,15 +83,15 @@ $ vi [script_dir]/test.sh ## 각자 실험 상황에 맞게 수정
  17     ii=$(printf "%02d" $q)
  18     echo "start query-$q"
  19     START=`msecs`
- 20     psql -d tpch1 -t -A -F"," < /tpch/queries/q$ii.analyze.sql > /local_log/[log_name]_q$ii-plan.csv
+ 20     psql -d tpch1 -t -A -F"," < /tpch/queries/q$ii.analyze.sql > /local_log/${log_name}_q$ii-plan.csv
  21     END=`msecs`
  22     DURATION=$(( $END - $START ))
  23     echo "duration of query-$q = $DURATION"
- 24     printf "%d: \t%16s secs\n" $q `msec_to_sec $DURATION` >> /local_log/[log_name]_execution time.log
+ 24     printf "%d: \t%16s secs\n" $q `msec_to_sec $DURATION` >> /local_log/${log_name}_execution time.log
  25     TOTAL_MSECONDS=$(( $TOTAL_MSECONDS + $DURATION ))
  26 done
  27 
- 28 printf "Total: \t%16s secs\n" `msec_to_sec $TOTAL_MSECONDS` >> /local_log/[log_name]_execution time.log
+ 28 printf "Total: \t%16s secs\n" `msec_to_sec $TOTAL_MSECONDS` >> /local_log/${log_name}_execution time.log
  29 
 
 
