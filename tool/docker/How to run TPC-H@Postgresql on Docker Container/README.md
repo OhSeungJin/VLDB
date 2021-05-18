@@ -44,6 +44,10 @@ $ sudo docker exec -it -u pgsql [container_name] /bin/bash
 # in container
  $ sudo chown -R pgsql:pgsql /mount /local_log;
  $ sudo chmod -R 700 /mount /local_log;
+ # ~/bashrc에 
+ # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/pgsql/postgresql-12.4/build/lib
+ # export PATH=/home/pgsql/postgresql-12.4/build/bin:$PATH
+ # 추가
  $ source ~/.bashrc
  $ initdb -D /mount/ --no-locale --encoding=UTF8
  $ pg_ctl start -D /mount
